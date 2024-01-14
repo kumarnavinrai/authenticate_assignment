@@ -1,0 +1,79 @@
+{
+    "info": {
+      "_postman_id": "kumarnavinrai",
+      "name": "AUTH ASSIGNMENT REST API Collection",
+      "description": "Collection for your API routes",
+      "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+    },
+    "item": [
+      {
+        "name": "Get All Users",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/api/users",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "users"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Get User by ID",
+        "request": {
+          "method": "GET",
+          "header": [],
+          "url": {
+            "raw": "http://localhost:3000/api/users/1", 
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "users", "1"] 
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "Add User",
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n\t\"email\": \"user@example.com\",\n\t\"name\": \"John Doe\",\n\t\"password\": \"secret\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/users",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "users"]
+          }
+        },
+        "response": []
+      },
+      {
+        "name": "User Login",
+        "request": {
+          "method": "POST",
+          "header": [{ "key": "Content-Type", "value": "application/json" }],
+          "body": {
+            "mode": "raw",
+            "raw": "{\n\t\"email\": \"user@example.com\",\n\t\"password\": \"secret\"\n}"
+          },
+          "url": {
+            "raw": "http://localhost:3000/api/login",
+            "protocol": "http",
+            "host": ["localhost"],
+            "port": "3000",
+            "path": ["api", "login"]
+          }
+        },
+        "response": []
+      }
+    ]
+  }
+  
