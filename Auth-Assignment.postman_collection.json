@@ -1,0 +1,467 @@
+{
+	"info": {
+		"_postman_id": "55ef5f9b-2a95-45a5-8068-051e9c7dd562",
+		"name": "Auth-Assignment",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+		"_exporter_id": "26412775"
+	},
+	"item": [
+		{
+			"name": "login",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\":\"aaa@aaa.com\",\n    \"password\":\"12345\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/login",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"login"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "sign up",
+			"request": {
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"email\": \"aaa@aaa.com\",\n    \"password\": \"12345\",\n    \"name\": \"navin\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add bus",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUwNzE0MzMsImV4cCI6MTcwNTA3ODYzM30.15sSqpLdyouIlmqMH3wtqRJ6L6JcbkSRy9o8WrgL5PM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"bus_no\": \"PB0104\",\n    \"status\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/bus/buses",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"bus",
+						"buses"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "add bus route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUwNzE0MzMsImV4cCI6MTcwNTA3ODYzM30.15sSqpLdyouIlmqMH3wtqRJ6L6JcbkSRy9o8WrgL5PM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "POST",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"routeStart\": \"lisbon\",\n    \"routeEnd\": \"azuma\",\n    \"when\": \"13 Jan 2024\",\n    \"timeStart\": \"13:00\",\n    \"timeEnd\": \"15:00\",\n    \"busId\": \"1\",\n    \"routeName\": \"lisbon to azuma\",\n    \"status\": \"1\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/busroute/busroutes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"busroute",
+						"busroutes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "update seat status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUyNDgyMTQsImV4cCI6MTcwNTI1NTQxNH0.b8G15qUZuxIaqCfhcF1vNkcPkF8EMAhWb4JynEevbJA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"seat_number\": \"1\",\n    \"route_id\": \"3\",\n    \"user_id\": \"8\",\n    \"status\": \"close\",\n    \"user_details\": \"{'name':'John Doe','email':'user@example.com','id':1}\"\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "http://localhost:3000/seats/seatupdate/2/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"seats",
+						"seatupdate",
+						"2",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get users",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUwNzkxNjMsImV4cCI6MTcwNTA4NjM2M30.1n45IZy49y9_D8ONW6clPED7ljZUYits9LcwbA3SCf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/api/users",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"api",
+						"users"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get bus routes",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUwNzE0MzMsImV4cCI6MTcwNTA3ODYzM30.15sSqpLdyouIlmqMH3wtqRJ6L6JcbkSRy9o8WrgL5PM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/busroute/busroutes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"busroute",
+						"busroutes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get all seats",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUwNzE0MzMsImV4cCI6MTcwNTA3ODYzM30.15sSqpLdyouIlmqMH3wtqRJ6L6JcbkSRy9o8WrgL5PM",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/busroute/busroutes",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"busroute",
+						"busroutes"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "get seats by route id",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUwNzkxNjMsImV4cCI6MTcwNTA4NjM2M30.1n45IZy49y9_D8ONW6clPED7ljZUYits9LcwbA3SCf8",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/seats/seats/route/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"seats",
+						"seats",
+						"route",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View Ticket Status",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUyNDgyMTQsImV4cCI6MTcwNTI1NTQxNH0.b8G15qUZuxIaqCfhcF1vNkcPkF8EMAhWb4JynEevbJA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/seats/seats/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"seats",
+						"seats",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "• View Details of the person owning the ticket",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUxMzg0MzcsImV4cCI6MTcwNTE0NTYzN30.hkx8qu9TnfxYvukSKTMdL9jS68Y00bbnW85gon88C3c",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/seats/seats/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"seats",
+						"seats",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all closed tickets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUyNDgyMTQsImV4cCI6MTcwNTI1NTQxNH0.b8G15qUZuxIaqCfhcF1vNkcPkF8EMAhWb4JynEevbJA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/seats/seats/closed/3",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"seats",
+						"seats",
+						"closed",
+						"3"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "View all open tickets",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUyNDgyMTQsImV4cCI6MTcwNTI1NTQxNH0.b8G15qUZuxIaqCfhcF1vNkcPkF8EMAhWb4JynEevbJA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "GET",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/seats/seats/open/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"seats",
+						"seats",
+						"open",
+						"1"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Open all seats of a route",
+			"request": {
+				"auth": {
+					"type": "bearer",
+					"bearer": [
+						{
+							"key": "token",
+							"value": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJ1c2VySWQiOjEyLCJpYXQiOjE3MDUyNDgyMTQsImV4cCI6MTcwNTI1NTQxNH0.b8G15qUZuxIaqCfhcF1vNkcPkF8EMAhWb4JynEevbJA",
+							"type": "string"
+						}
+					]
+				},
+				"method": "PUT",
+				"header": [],
+				"url": {
+					"raw": "http://localhost:3000/seats/seats/open-all/1",
+					"protocol": "http",
+					"host": [
+						"localhost"
+					],
+					"port": "3000",
+					"path": [
+						"seats",
+						"seats",
+						"open-all",
+						"1"
+					]
+				}
+			},
+			"response": []
+		}
+	]
+}
