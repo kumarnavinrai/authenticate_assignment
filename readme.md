@@ -271,5 +271,3 @@ Feel free to contribute to this project. Follow the contribution guidelines for 
 License
 This project is licensed under the MIT License.
 
-
-Please replace the placeholder values as mentioned earlier and add specific details as needed for your project.
