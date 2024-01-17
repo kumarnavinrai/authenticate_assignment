@@ -16,12 +16,14 @@ class SeatModel extends Model {
     SeatModel.belongsTo(models.BusRouteModel, {
       foreignKey: 'route_id',
       as: 'busRoute',
+      targetKey: 'id',
     });
 
     // Define the association with UserModel
     SeatModel.belongsTo(models.UserModel, {
       foreignKey: 'user_id',
       as: 'user',
+      targetKey: 'id',
     });
   }
 }
@@ -38,7 +40,7 @@ SeatModel.init(
       allowNull: false,
     },
     user_id: {
-      type: DataTypes.INTEGER,
+      type: DataTypes.INTEGER.UNSIGNED,
     },
     user_details: {
       type: DataTypes.TEXT,
@@ -59,9 +61,10 @@ SeatModel.init(
 );
 
 // Define the association with BusRouteModel
-SeatModel.belongsTo(BusRouteModel, { foreignKey: 'route_id', as: 'busroutes' });
+SeatModel.belongsTo(BusRouteModel, { foreignKey: 'route_id', as: 'busroutes', targetKey: 'id' });
 
 // Define the association with UserModel
-SeatModel.belongsTo(UserModel, { foreignKey: 'user_id', as: 'users' });
+SeatModel.belongsTo(UserModel, { foreignKey: 'user_id', as: 'users', targetKey: 'id' });
+
 
 export default SeatModel;
