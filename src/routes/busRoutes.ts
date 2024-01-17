@@ -1,7 +1,7 @@
 import express from 'express';
 import { Request, Response, NextFunction } from 'express';
 import UserController from '../controllers/userController';
-import BusController from '../controllers/BusController';
+import BusController from '../controllers/busController';
 import * as userValidation from '../validation/userValidation';
 import * as busValidation from '../validation/busValidation';
 import { validateRequest } from '../middleware/validateRequest';
